@@ -1,0 +1,285 @@
+@use "./responsive" as *;
+@use "./colors" as *;
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 29px 0 29px 0;
+    position: relative;
+    display: none;
+
+    @include responsive(s){
+        padding: 1px 0 1px 0;
+    }
+}
+
+.nav__logo{
+    & > img{
+        background-repeat: no-repeat;
+        
+        @include responsive(xs){
+            width: 178px;
+            height: fit-content;        
+        }
+    }
+}
+
+.navBar{
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+
+    @include responsive(ll){
+        padding: 0 4rem 0 4rem;
+    }
+
+    @include responsive(xs){
+        padding: 0 22px 0 22px;
+    }
+
+    .bx-label{
+        display: none;
+        z-index: 3;
+        padding: 9px;
+        position: absolute;
+        top: -22000%;
+
+        right: 18px;
+
+        @include responsive(s){
+            display: block;
+        }
+    }
+}
+
+.nav-menu{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav__list{
+    list-style: none;
+    display: flex;
+
+    @include responsive(s){
+        display: none;
+    }
+}
+
+.btn-send-email{
+    display: inline-block;
+    width: 192px;
+    height: 43px;
+    border-radius: 6px;
+    background-color: green;
+    color: $blue-dark;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .7s ease;
+
+    &:hover{
+        transform: translateY(-4px);
+    }
+}
+
+.nav__link{
+    display: inline-block;
+    margin-left: 15px;
+    padding: 8px 16px;
+    font-size: 22px;
+    font-weight: 200;
+    text-decoration: none;
+    letter-spacing: 2px;
+    position: relative;
+    color: #fff;
+    transition: 400ms ease;
+    font-family: Source Sans Pro;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 22.14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    position: relative;
+    font-family: "Source Sans Pro", sans-serif !important;
+
+    :active .menu-hamburguer{
+    transform: translateX(0);
+    display: none;
+} 
+
+    &:hover{
+        transform: translateY(-3px);
+    }
+
+    @include responsive(l){
+        margin-left: 20px;
+        padding: 8px 8px;
+        font-size: 20px;
+    }
+
+    @include responsive(m){
+        margin-left: 15px;
+        padding: 8px 7px;
+        font-size: 20px;
+    } 
+}
+
+.nav-social{
+    display: flex;
+
+    svg{
+        cursor: pointer;
+        margin-left: 16px;
+        width: 24px;
+
+        path, circle{
+            transition: .7s ease;
+        }
+
+        &:hover{
+            path, circle{
+                fill: greenyellow;
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    @include responsive(s){
+        display: none;
+    }
+}
+
+.bx-label{
+    position: relative;
+    cursor: pointer;
+
+    &::after{
+        content: '';
+        width: 68%;
+        height: 9%;
+        background-color: #002B38;
+        border-radius: 20px;
+        position: absolute;
+        top: 75%;
+        left: 18%;
+        transition: 500ms ease;
+    }
+}
+
+.bx{
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+
+    &::after{
+        content: '';
+        width: 99%;
+        height: 12%;
+        background-color: #002B38;
+        border-radius: 20px;
+        position: absolute;
+        top: 20%;
+        left: 3%;
+        transition: 500ms ease;
+    }
+
+    &::before{
+        content: '';
+        width: 99%;
+        height: 12%;
+        background-color: #002B38;
+        border-radius: 20px;
+        position: absolute;
+        right: -2%;
+        top: 55%;
+        transition: 500ms ease;
+    }
+
+    @include responsive(s){
+        display: block;
+    }
+}
+
+#bx-input:checked ~ label .bx::after{
+    transform: rotate(406deg);
+    top: 40%;
+    background-color: #fff;
+}
+#bx-input:checked ~ label .bx::before{
+    width: 99%;
+    transform: rotate(-230deg);
+    background-color: #fff;
+    top: 40%;
+}
+#bx-input:checked ~ label{
+    transform: translate(-6px, 10px);
+}
+#bx-input:checked ~ label + .menu-hamburguer{
+    transform: translateX(0);
+    display: block;
+} 
+#bx-input:checked ~ label{
+    
+    &::after{
+        opacity: 0;
+        background-color: #fff;
+        transform: translateY(-3px);
+    }
+} 
+
+.menu-hamburguer{
+    transition: all 500ms ease;
+    width: 30vw;
+    height: 105vh;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+    position: absolute;
+    top: -24500%;
+    right: 0;
+    display: none;
+
+    .nav__hamburguer{
+        list-style: none;
+        transform: translateY(20vh);
+
+        .nav__link{
+            color: #fff;
+        }
+    }  
+
+    @include responsive(xss){
+        width: 60vw;
+    }
+
+    @include responsive(xs){
+        width: 55%;
+    }
+
+    .list-items{
+        display: flex;
+        flex-direction: column;
+
+        .btn-send-email{
+            width: 138px;
+            transform: translate(-17%, 22vh);
+            color: #fff;
+        }
+    }
+}

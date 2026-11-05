@@ -1,0 +1,41 @@
+$container-l: 1140px;
+$container-m: 960px;
+$container-s: 540px;
+$container-xs: 540px;
+
+@mixin responsive($device) {
+    @if $device == l {
+      @media (max-width: 1280px){
+        @content;
+      }
+    } @else if $device == m {
+      @media (max-width: 1140px){
+        @content;
+      }
+    } @else if $device == s {
+      @media (max-width: 960px) {
+        @content;
+      }
+    } @else if $device == t {
+      @media (max-width: 768px) {
+        @content;
+      }
+    } @else if $device == xs {
+      @media (max-width: 540px) {
+        @content;
+      }
+    } @else if $device == xss{
+      @media (max-width: 400px) {
+        @content;
+      }
+    }@else if $device == sxss{
+      @media (max-width: 327px) {
+        @content;
+      }
+    }
+    @else if $device == ll{
+      @media (max-width: 1420px) {
+        @content;
+      }
+    }
+  }
