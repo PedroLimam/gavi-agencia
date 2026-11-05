@@ -1011,11 +1011,6 @@ footer > img {
   justify-content: center;
   padding-top: 2rem;
 }
-@media (max-width: 540px) {
-  .section-apresentacao-gavi {
-    padding: 0px;
-  }
-}
 .section-apresentacao-gavi > .video-desktop {
   width: 80%;
   height: 60vh;

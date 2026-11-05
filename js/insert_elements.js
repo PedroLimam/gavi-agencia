@@ -26,11 +26,6 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-pagination',
   },
 
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-
   breakpoints: {
         0: {
             slidesPerView: 1,
@@ -45,3 +40,13 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+
+const video = document.querySelector('.video-mobile');
+
+video.addEventListener('click', () => {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); // Safari iOS
+    }
+});

@@ -744,10 +744,6 @@ footer{
     justify-content: center;
     padding-top: 2rem;
 
-    @include responsive(xs){
-        padding: 0px;
-    }
-
     & > .video-desktop{
         width: 80%;
         height: 60vh;
