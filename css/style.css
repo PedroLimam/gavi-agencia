@@ -912,8 +912,8 @@ footer > img {
 }
 .section__depoimentos .card-depoimento {
   background-color: #FFFFFF;
-  width: 358px;
-  height: 321.97px;
+  width: 358px !important;
+  height: 321.97px !important;
   position: relative;
   padding: 1.7rem 1.5rem 1.7rem 1.5rem;
   margin: 20px 7px 20px 7px;
@@ -966,13 +966,12 @@ footer > img {
   }
 }
 .swiper {
-  width: 670px;
-  height: 300px;
+  width: 600px;
+  height: 370px;
 }
 @media (max-width: 540px) {
   .swiper {
-    width: 100% !important;
-    height: 236px !important;
+    width: 98% !important;
   }
 }
 
@@ -990,4 +989,17 @@ footer > img {
   .myswiper .swiper-button-next {
     display: none;
   }
+}
+.swiper-pagination-bullet {
+  background-color: #73846D !important;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #73846D !important;
+  opacity: 1;
+}
+
+.swiper-scrollbar-drag {
+  background-color: #73846D !important;
 }/*# sourceMappingURL=style.css.map */
