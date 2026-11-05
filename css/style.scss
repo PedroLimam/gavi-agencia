@@ -159,6 +159,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .section-servicos__box{
@@ -735,4 +736,37 @@ footer{
 
 .swiper-scrollbar-drag{
     background-color: #73846D !important;
+}
+
+.section-apresentacao-gavi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+
+    @include responsive(xs){
+        padding: 0px;
+    }
+
+    & > .video-desktop{
+        width: 80%;
+        height: 60vh;
+
+        @media (max-width: 1070px) {
+            display: none !important;
+        }
+    }
+
+    & > .video-mobile{
+        height: 70vh;
+        max-width: 90%;
+
+        @media (min-width: 1070px) {
+            display: none !important;
+        }
+
+        @include responsive(xs){
+            height: 56vh;
+        }
+    }
 }
