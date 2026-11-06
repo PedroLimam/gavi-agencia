@@ -134,7 +134,9 @@ body{
         }
     }
 
-    & > p{
+    & > a{
+        all: unset;
+        cursor: pointer;
         display: inline-block;
         background-color: $green-1;
         color: #fff;
@@ -204,7 +206,8 @@ body{
         }
     }
 
-    & > p{
+    & > a{
+        all: unset;
         color: $green-1;
         font-size: 32px;
         text-align: center;
